@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version 2 - Dynamic AI Choices</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>AI Story - Dynamic Choices</h2>
+    <div id="story">
+        <p>The Duke is watching you closely. An AI-generated choice will appear here soon.</p>
+        <button onclick="generateChoice()">Generate Choice</button>
+    </div>
+
+    <script>
+        function generateChoice() {
+            const storyDiv = document.getElementById('story');
+            storyDiv.innerHTML = `
+                <p>Placeholder: AI dynamically generates dialogue and choices.</p>
+                <button onclick="restart()">Start Over</button>
+            `;
+        }
+
+        function restart() {
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

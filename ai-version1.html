@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Royal Roommate - Episode 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Episode 1 - New Beginnings</h2>
+    <div id="scene">
+        <p>Liv stood at the edge of the sprawling campus courtyard, the late afternoon sun casting long shadows across the polished brick paths. Her suitcase felt heavier than it was, nerves pulling her in different directions.</p>
+        <p>She paused, gazing up at the stone archways that framed the entrance to her dormitory. The prestigious Elmore University, known globally for producing the next generation of leaders and elites, loomed before her. A soft breeze rustled the ivy climbing the walls, carrying faint laughter from distant students.</p>
+        <button onclick="nextScene('arrival')">Step Inside</button>
+    </div>
+
+    <script>
+        function nextScene(choice) {
+            const sceneDiv = document.getElementById('scene');
+
+            if (choice === 'arrival') {
+                sceneDiv.innerHTML = `
+                    <p>Liv pulled open the heavy oak door and stepped into the dorm lobby. The scent of fresh paint and coffee lingered in the air. She spotted a girl by the window, scrolling through her phone, effortlessly glamorous in an oversized sweater and designer boots.</p>
+                    <p>The girl glanced up, brightening instantly. "Hey! You must be my new roommate. I'm Chloe."</p>
+                    <p>Liv hesitated, taking in Chloe’s flawless makeup and confident smile.</p>
+                    <p>How should Liv respond?</p>
+                    <button onclick="nextScene('polite')">Polite and Friendly</button>
+                    <button onclick="nextScene('shy')">Shy but Appreciative</button>
+                    <button onclick="nextScene('curious')">Curious and Direct</button>
+                    <button onclick="nextScene('sarcastic')">Playfully Sarcastic</button>
+                `;
+            } else if (choice === 'polite' || choice === 'shy' || choice === 'curious' || choice === 'sarcastic') {
+                sceneDiv.innerHTML = `
+                    <p>Chloe’s eyes sparkled as she leaned in conspiratorially. "Oh, you are going to LOVE this place. Trust me, I’ll make sure you fit right in."</p>
+                    <p>The warmth in Chloe’s voice eased some of Liv’s nerves.</p>
+                    <p>The day slipped into evening as the two unpacked, trading stories about their hometowns and favorite books. Chloe’s effortless confidence balanced Liv’s quiet excitement. For the first time, Elmore felt less intimidating.</p>
+                    <button onclick="nextScene('partyInvite')">Continue</button>
+                `;
+            } else if (choice === 'partyInvite') {
+                sceneDiv.innerHTML = `
+                    <p>Later that evening, Liv sat cross-legged on her bed, unpacking. Chloe twirled a glittering silver dress in front of the mirror.</p>
+                    <p>"We’re going to a party tonight. Rooftop, VIP crowd. It’s the best way to meet everyone who matters." Chloe glanced at Liv through the mirror’s reflection. "You’re coming, right?"</p>
+                    <p>Liv hesitated, unsure if this was her scene.</p>
+                    <p>What does Liv do?</p>
+                    <button onclick="nextScene('accept')">Accept Immediately</button>
+                    <button onclick="nextScene('hesitate')">Hesitate</button>
+                    <button onclick="nextScene('decline')">Politely Decline</button>
+                    <button onclick="nextScene('askDetails')">Ask for More Details</button>
+                `;
+            } else if (choice === 'accept' || choice === 'hesitate' || choice === 'askDetails') {
+                sceneDiv.innerHTML = `
+                    <p>The rooftop glowed under string lights, the faint hum of music carrying through the cool air. Liv followed Chloe closely, her eyes wide as they wove through clusters of elegantly dressed students.</p>
+                    <p>"That’s Leo," Chloe whispered, pointing to a striking figure near the bar. "Careful with him. He’s charming... and trouble."</p>
+                    <p>Leo caught Liv’s gaze and smiled, lifting his glass slightly in greeting.</p>
+                    <p>How does Liv respond?</p>
+                    <button onclick="nextScene('approachLeo')">Approach Leo</button>
+                    <button onclick="nextScene('stayChloe')">Stay with Chloe</button>
+                    <button onclick="nextScene('observe')">Observe from a Distance</button>
+                `;
+            } else if (choice === 'approachLeo') {
+                sceneDiv.innerHTML = `
+                    <p>Liv took a breath and walked over. "You must be the infamous Leo everyone talks about," she said playfully.</p>
+                    <p>Leo’s smile widened. "I like how you say that like you know me already. And you are?"</p>
+                    <p>They chatted effortlessly, the energy between them growing with each exchange.</p>
+                    <button onclick="restart()">End of Episode</button>
+                `;
+            } else if (choice === 'stayChloe') {
+                sceneDiv.innerHTML = `
+                    <p>Liv decided to stay by Chloe’s side. "I’ll pass. He looks like enough trouble from here."</p>
+                    <p>Chloe grinned. "Smart girl. But you can’t avoid him forever."</p>
+                    <button onclick="restart()">End of Episode</button>
+                `;
+            }
+        }
+
+        function restart() {
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>
